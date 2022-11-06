@@ -1,0 +1,4 @@
+kubectl apply -f server_deploy.yml
+kubectl delete -f server_deploy.yml
+
+kubectl get svc -n usactar

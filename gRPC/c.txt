@@ -1,0 +1,12 @@
+sudo tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+
+sudo apt install golang-goprotobuf-dev
+
+
+protoc --go_out=plugins=grpc:. conf.proto
+
+docker build --tag=roshgard/grpc_server .
+docker build --tag=roshgard/grpc_client .
+
+docker push roshgard/grpc_client

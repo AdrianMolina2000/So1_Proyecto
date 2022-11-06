@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: usactar
+spec:
+  selector:
+    matchLabels:
+      run: web
+  template:
+    metadata:
+      labels:
+        run: web
+    spec:
+      containers:
+      - image: roshgard/go_api
+        imagePullPolicy: Always
+        name: web
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: usactar
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    run: web
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: basic-ingress
+  namespace: usactar
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "20.119.124.245.nip.io"
+    http:
+      paths:
+      - path: /output(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: web
+            port:
+              number: 8080

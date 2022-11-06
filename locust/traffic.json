@@ -1,0 +1,258 @@
+[
+    {
+        "team1": "Paises Bajos",
+        "team2": "España",
+        "score":"4-5",
+        "phase":1
+    },
+    {
+        "team1": "Paises Bajos",
+        "team2": "España",
+        "score":"1-3",
+        "phase":1
+    },
+    {
+        "team1": "Paises Bajos",
+        "team2": "España",
+        "score":"0-1",
+        "phase":1
+    },{
+        "team1": "Inglaterra",
+        "team2": "Croacia",
+        "score":"3-0",
+        "phase":1
+    },
+    {
+        "team1": "Inglaterra",
+        "team2": "Croacia",
+        "score":"2-1",
+        "phase":1
+    },
+    {
+        "team1": "Inglaterra",
+        "team2": "Croacia",
+        "score":"1-3",
+        "phase":1
+    },{
+        "team1": "Argentina",
+        "team2": "Suiza",
+        "score":"3-0",
+        "phase":1
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Suiza",
+        "score":"1-0",
+        "phase":1
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Suiza",
+        "score":"2-1",
+        "phase":1
+    },{
+        "team1": "Francia",
+        "team2": "Uruguay",
+        "score":"5-0",
+        "phase":1
+    },
+    {
+        "team1": "Francia",
+        "team2": "Uruguay",
+        "score":"2-0",
+        "phase":1
+    },
+    {
+        "team1": "Francia",
+        "team2": "Uruguay",
+        "score":"3-2",
+        "phase":1
+    },{
+        "team1": "Alemania",
+        "team2": "Ecuador",
+        "score":"2-0",
+        "phase":1
+    },
+    {
+        "team1": "Alemania",
+        "team2": "Ecuador",
+        "score":"2-1",
+        "phase":1
+    },
+    {
+        "team1": "Alemania",
+        "team2": "Ecuador",
+        "score":"1-2",
+        "phase":1
+    },{
+        "team1": "Belgica",
+        "team2": "EE.UU",
+        "score":"2-1",
+        "phase":1
+    },
+    {
+        "team1": "Belgica",
+        "team2": "EE.UU",
+        "score":"2-3",
+        "phase":1
+    },
+    {
+        "team1": "Belgica",
+        "team2": "EE.UU",
+        "score":"5-2",
+        "phase":1
+    },{
+        "team1": "Brasil",
+        "team2": "Polonia",
+        "score":"5-1",
+        "phase":1
+    },
+    {
+        "team1": "Brasil",
+        "team2": "Polonia",
+        "score":"4-3",
+        "phase":1
+    },
+    {
+        "team1": "Brasil",
+        "team2": "Polonia",
+        "score":"3-2",
+        "phase":1
+    },{
+        "team1": "Portugal",
+        "team2": "Dinamarca",
+        "score":"2-1",
+        "phase":1
+    },
+    {
+        "team1": "Portugal",
+        "team2": "Dinamarca",
+        "score":"3-1",
+        "phase":1
+    },
+    {
+        "team1": "Portugal",
+        "team2": "Dinamarca",
+        "score":"4-2",
+        "phase":1
+    },{
+        "team1": "España",
+        "team2": "Alemania",
+        "score":"2-1",
+        "phase":2
+    },
+    {
+        "team1": "España",
+        "team2": "Alemania",
+        "score":"3-4",
+        "phase":2
+    },
+    {
+        "team1": "España",
+        "team2": "Alemania",
+        "score":"3-2",
+        "phase":2
+    },{
+        "team1": "Inglaterra",
+        "team2": "Belgica",
+        "score":"2-3",
+        "phase":2
+    },
+    {
+        "team1": "Inglaterra",
+        "team2": "Belgica",
+        "score":"5-2",
+        "phase":2
+    },
+    {
+        "team1": "Inglaterra",
+        "team2": "Belgica",
+        "score":"1-0",
+        "phase":2
+    },{
+        "team1": "Argentina",
+        "team2": "Brasil",
+        "score":"5-3",
+        "phase":2
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Brasil",
+        "score":"2-1",
+        "phase":2
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Brasil",
+        "score":"3-2",
+        "phase":2
+    },{
+        "team1": "Francia",
+        "team2": "Portugal",
+        "score":"5-3",
+        "phase":2
+    },
+    {
+        "team1": "Francia",
+        "team2": "Portugal",
+        "score":"0-1",
+        "phase":2
+    },
+    {
+        "team1": "Francia",
+        "team2": "Portugal",
+        "score":"1-0",
+        "phase":2
+    },{
+        "team1": "España",
+        "team2": "Inglaterra",
+        "score":"2-0",
+        "phase":3
+    },
+    {
+        "team1": "España",
+        "team2": "Inglaterra",
+        "score":"2-1",
+        "phase":3
+    },
+    {
+        "team1": "España",
+        "team2": "Inglaterra",
+        "score":"1-3",
+        "phase":3
+    },{
+        "team1": "Argentina",
+        "team2": "Francia",
+        "score":"2-1",
+        "phase":3
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Francia",
+        "score":"4-3",
+        "phase":3
+    },
+    {
+        "team1": "Argentina",
+        "team2": "Francia",
+        "score":"1-2",
+        "phase":3
+    },{
+        "team1": "España",
+        "team2": "Argentina",
+        "score":"2-1",
+        "phase":4
+    },
+    {
+        "team1": "España",
+        "team2": "Argentina",
+        "score":"1-3",
+        "phase":4
+    },
+    {
+        "team1": "España",
+        "team2": "Argentina",
+        "score":"0-2",
+        "phase":4
+    }
+]

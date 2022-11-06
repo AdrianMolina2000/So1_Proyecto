@@ -1,0 +1,15 @@
+curl -fsL https://run.linkerd.io/install | sh
+
+linkerd check --pre
+
+export PATH=$PATH:$HOME/.linkerd2/bin
+
+linkerd install --crds | kubectl apply -f -
+
+linkerd install | kubectl apply -f -
+
+linkerd viz install | kubectl apply -f -
+
+kubectl -n usactar get deploy -o yaml | linkerd inject - | kubectl apply -f -
+
+linkerd viz dashboard

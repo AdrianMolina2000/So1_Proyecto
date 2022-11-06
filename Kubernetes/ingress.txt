@@ -1,0 +1,10 @@
+helm install nginx-ingress ingress-nginx/ingress-nginx -n usactar
+helm uninstall nginx-ingress -n usactar
+
+kubectl apply -f newDeploy.yml
+kubectl delete -f newDeploy.yml
+
+kubectl describe ingress -n usactar
+
+20.81.101.28.nip.io/output/getPartidosMongo/
+20.81.101.28.nip.io/output/getPartidosRedis/

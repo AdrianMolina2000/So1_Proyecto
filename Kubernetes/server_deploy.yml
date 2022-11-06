@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-deploy
+  namespace: usactar
+  labels:
+    app: grpc-deploy
+spec:
+  selector:
+    matchLabels:
+      app: grpc-deploy
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: grpc-deploy
+    spec:
+      containers:
+        - name: grpc-server
+          image: roshgard/grpc_server
+          ports:
+            - containerPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grpc-deploy
+  name: svc-grpc
+  namespace: usactar
+spec:
+  type: LoadBalancer
+  selector:
+    app: grpc-deploy
+  ports:
+    - port: 50051
+      targetPort: 50051
+      protocol: TCP
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: svc-grpc
+# spec:
+#   type: NodePort
+#   selector:
+#     app: grpc-deploy
+#   ports:
+#     - port: 50051
+#       targetPort: 50051
+#       name: port-np-grpc
+    
+

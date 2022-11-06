@@ -1,0 +1,38 @@
+brew install step
+step certificate create root.linkerd.cluster.local root.crt root.key --profile root-ca --no-password --insecure
+step certificate create identity.linked.cluster.local issuer.crt issuer.key --profile intermediate-ca --not-after 8760h --no-password --insecure --ca root.crt --ca-key root.key
+
+linkerd install --crds | kubectl --context=google apply -f -
+linkerd install --crds | kubectl --context=azure apply -f -
+
+linkerd install \
+  --identity-trust-anchors-file root.crt \
+  --identity-issuer-certificate-file issuer.crt \
+  --identity-issuer-key-file issuer.key \
+  | kubectl --context=google apply -f -
+  
+linkerd install --identity-trust-anchors-file root.crt --identity-issuer-certificate-file issuer.crt --identity-issuer-key-file issuer.key | kubectl --context=azure apply -f -
+  
+linkerd --context=google viz install | kubectl --context=google apply -f -
+linkerd --context=azure viz install | kubectl --context=azure apply -f -
+
+linkerd --context=google multicluster install | kubectl --context=google apply -f -
+linkerd --context=azure multicluster install | kubectl --context=azure apply -f -
+
+linkerd --context=azure multicluster check
+linkerd --context=azure multicluster gateways
+
+linkerd --context=google multicluster link --cluster-name google | kubectl --context=azure apply -f -
+
+kubectl create deploy webserver --image=nginx --context google
+kubectl get deploy webserver -o yaml | linkerd inject - | kubectl apply --context google -f -
+
+kubectl expose deploy webserver --target-port=80 --port=80 --context google
+kubectl --context=google label svc webserver mirror.linkerd.io/exported=true
+
+kubectl create deploy client --image=nginx --context azure
+kubectl get deploy client -o yaml --context azure | linkerd inject - | kubectl apply --context azure -f -
+
+kubectl exec -it --context azure client-55f7f64b4-9gpqw -c nginx -- sh
+curl webserver-google
+

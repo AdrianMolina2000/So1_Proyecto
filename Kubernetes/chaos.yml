@@ -1,0 +1,21 @@
+kind: Schedule
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: usactar
+  name: test-chaos
+spec:
+  schedule: '@every 10s'
+  startingDeadlineSeconds: null
+  concurrencyPolicy: Allow
+  historyLimit: 2
+  type: PodChaos
+  podChaos:
+    selector:
+      namespaces:
+        - usactar
+      labelSelectors:
+        app: grpc-deploy
+    mode: one
+    action: pod-kill
+    duration: 5s
+    gracePeriod: 0

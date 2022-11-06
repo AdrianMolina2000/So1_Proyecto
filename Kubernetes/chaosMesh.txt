@@ -1,0 +1,2 @@
+curl -sSL https://mirrors.chaos-mesh.org/v2.4.1/install.sh | bash
+

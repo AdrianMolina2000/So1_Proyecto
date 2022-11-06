@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-grpc
+  labels:
+    run: kafka-grpc
+  namespace: usactar
+spec:
+  containers:
+    - name: consumer-kafka
+      image: esdrastochi/consumerkafka_201807373
+      imagePullPolicy: Always
+    - name: grpc-client
+      image: roshgard/grpc_client
+      imagePullPolicy: Always
+      ports:
+        - name: grpc-client
+          containerPort: 2000
+          protocol: TCP

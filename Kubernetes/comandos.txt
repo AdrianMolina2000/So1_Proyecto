@@ -1,0 +1,4 @@
+export PATH=$PATH:/home/roshgard/.linkerd2/bin
+
+
+az aks get-credentials --resource-group KuberSopes --name proyecto
